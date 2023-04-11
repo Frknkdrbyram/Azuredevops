@@ -112,13 +112,7 @@ Open Template file 'locustinput.py' and Replace '< yourappname >':
 ```
 ![Install locust tool](screenshot/11.jpg "Install locust tool")
 
-Open Template file 'locustinput.py' and Replace '< yourappname >':
-```bash
-(.myrepo) furkan [~/Azuredevops]$ nano locustinput.py
-(.myrepo) furkan [~/Azuredevops]$ locust -f locustinput.py --headless -u 10 -r 3 -t 10s
-```
 
-![locust_test](screenshot/11.jpg "locust_test")
 
 ### Provisioning CI/CD using Azure Pipelines
 
