@@ -113,6 +113,7 @@ Open Template file 'locustinput.py' and Replace '< yourappname >':
 (.myrepo) furkan [~/Azuredevops]$ locust -f locustinput.py --headless -u 10 -r 3 -t 10s
 ```
 ![Install locust tool](screenshot/11.jpg "Install locust tool")
+![Install locust tool](screenshot/lotus.jpg "Install locust tool")
 
 
 
