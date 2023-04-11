@@ -30,34 +30,34 @@ open the Azure cloud shell by using your credential.
 
 Clone project from GitHub and change to the project directory:
 ```bash
-odl_user [~]$ git clone git@github.com:Abdulrazak-Alahmad/flask-project.git
-odl_user [~]$ cd flask-project
+furkan [~]$ git clone git@github.com:Frknkdrbyram/Azuredevops.git
+furkan [~]$ cd Azuredevops
 ```
 
 Create python virtual env & source :
 ```bash
-odl_user [~/flask-project]$ python3 -m venv ~/.myrepo
-odl_user [~/flask-project]$ source ~/.myrepo/bin/activate
+furkan [~/Azuredevops]$ python3 -m venv ~/.myrepo
+furkan [~/Azuredevops]$ source ~/.myrepo/bin/activate
 ```
 ![ GitHub Clone Repo](screenshot/2.png "Clone repo / GitHub Clone Repo")
 ![ GitHub Clone Repo](screenshot/3.jpg "Clone repo / GitHub Clone Repo")
 
 Install needed packages and testing it:
 ```bash
-(.myrepo) odl_user [~/flask-project]$ make all
+(.myrepo) furkan [~/flask-project]$ make all
 ```
 ![Build project](screenshot/4.jpg "Build project")
 
 Run the application locally:
 ```bash
-(.myrepo) odl_user [~/flask-project]$ flask run
+(.myrepo) furkan [~/flask-project]$ flask run
 ```
 
 Test the code locally in new Azure Bash:
 ```bash
-odl_user [~]$ source ~/.myrepo/bin/activate
-(.myrepo) odl_user [~]$ cd flask-project/
-(.myrepo) odl_user [~/flask-project]$ ./make_prediction.sh
+furkan [~]$ source ~/.myrepo/bin/activate
+(.myrepo) furkan [~]$ cd flask-project/
+(.myrepo) furkan [~/flask-project]$ ./make_prediction.sh
 ```
 
 ![Test locally](screenshot/5.jpg "Test locally")
