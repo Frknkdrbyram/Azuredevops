@@ -105,8 +105,12 @@ validation of the webapp can be performed using [locust](https://locust.io).
 Install locust tool 
 
 (.myrepo) furkan [~/Azuredevops]$ pip install locust
-
-![Install locust tool](screenshot/10.jpg "Install locust tool")
+Open Template file 'locustinput.py' and Replace '< yourappname >':
+```bash
+(.myrepo) furkan [~/Azuredevops]$ nano locustinput.py
+(.myrepo) furkan [~/Azuredevops]$ locust -f locustinput.py --headless -u 10 -r 3 -t 10s
+```
+![Install locust tool](screenshot/11.jpg "Install locust tool")
 
 Open Template file 'locustinput.py' and Replace '< yourappname >':
 ```bash
