@@ -40,12 +40,13 @@ odl_user [~/flask-project]$ python3 -m venv ~/.myrepo
 odl_user [~/flask-project]$ source ~/.myrepo/bin/activate
 ```
 ![ GitHub Clone Repo](screenshot/2.png "Clone repo / GitHub Clone Repo")
+![ GitHub Clone Repo](screenshot/3.jpg "Clone repo / GitHub Clone Repo")
 
 Install needed packages and testing it:
 ```bash
 (.myrepo) odl_user [~/flask-project]$ make all
 ```
-![Build project](screenshot/screenshot/3.jpg "Build project")
+![Build project](screenshot/4.jpg "Build project")
 
 Run the application locally:
 ```bash
@@ -59,7 +60,7 @@ odl_user [~]$ source ~/.myrepo/bin/activate
 (.myrepo) odl_user [~/flask-project]$ ./make_prediction.sh
 ```
 
-![Test locally](screenshot/4.jpg "Test locally")
+![Test locally](screenshot/5.jpg "Test locally")
 
 ### Provisioning CI using Github Actions
 Performe CI by using GitHub Action.
