@@ -65,7 +65,7 @@ furkan [~]$ source ~/.myrepo/bin/activate
 ### Provisioning CI using Github Actions
 Performe CI by using GitHub Action.
 
-From the top bar of GitHub click on 'Actions', then click on "set up a workflow yourself' and use the GitHub Actions template yaml file located in  [.github/workflows/main.yml]
+From the top bar of GitHub click on 'Actions', then click on "set up a workflow yourself' and use the GitHub Actions template yaml file located in  [.github/workflows/pythonapp1.yml]
 
 Once you create this workflow, it will run automatically to build code in Repo:
 ![GitHub Actions](screenshot/6.jpg "GitHub Actions")
@@ -86,12 +86,9 @@ Check app if it is become online by using the link from the previous step:
 ![check webapp](screenshot/8.jpg "check webapp")
 
 Test the online app by invoke 'make_predict_azure_app.sh'  modify webapp name in the file
-Edit file 'make_predict_azure_app.sh' and replace '< yourappname >' with your webapp name (e.g. flask-abdulrazak).
+Edit file 'make_predict_azure_app.sh' and replace '< yourappname >' with your webapp name (e.g. flask-Frknkdrbyram).
 
 Test the remote webapp:
-```bash
-(.myrepo) furkan [~/Azuredevops]$  ./make_predict_azure_app.sh
-```
 
 Logs of webapp can be easily done by tail linux command:
 
@@ -101,7 +98,7 @@ open cloud shell
 (.myrepo) furkan [~/Azuredevops]$ az webapp log tail
 ```
 
-![Log](screenshot/9.jpg "Log")
+![Log](screenshot/10.jpg "Log")
 
 validation of the webapp can be performed using [locust](https://locust.io).
 
