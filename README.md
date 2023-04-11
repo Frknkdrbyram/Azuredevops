@@ -139,7 +139,11 @@ View pipeline log by click on build icon
 
 ![Azure_pipeline_build_deploy_log](screenshot/13.jpg "Azure_pipeline_build_deploy_log")
 
-From now on every change to your code will trigger the CI/CD pipeline and update your webapp accordingly
+From now on every change to your code will trigger the CI/CD pipeline and update your webapp accordingly:
+
+Change the application name in app.py from 'Sklearn Prediction Home' to 'Sklearn Prediction Home Edited' and commit it:
+
+(.myrepo) furkan [~/Azuredevops]$ git add app.py && git commit -m "Change app name" && git push
 
 App name before changing:
 ![Azure_pipeline_build_deploy_log](screenshot/8.jpg "Azure_pipeline_build_deploy_log")
@@ -147,6 +151,10 @@ App name before changing:
 App name after changing:
 ![Azure_pipeline_build_deploy_log](screenshot/9.jpg "Azure_pipeline_build_deploy_log")
 
+The pipeline is triggered by each commit to GitHub Repo and actually that is the CI/CD
+
+![Azure_pipeline_build_deploy_log](screenshot/build last.png "Azure_pipeline_build_deploy_log")
+![Azure_pipeline_build_deploy_log](screenshot/9.deploy last "Azure_pipeline_build_deploy_log")
 ## Enhancements
 Future improvements include but are not limited to:
 * More test cases using pytest
