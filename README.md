@@ -70,6 +70,8 @@ From the top bar of GitHub click on 'Actions', then click on "set up a workflow 
 Once you create this workflow, it will run automatically to build code in Repo:
 ![GitHub Actions](screenshot/6.jpg "GitHub Actions")
 
+
+
 Passing GitHub Actions:
 ![GitHub Actions](screenshot/7.jpg "GitHub Actions")
 
@@ -81,7 +83,7 @@ Deploy app to Azure app services locally using Azure CLI:
 
 Check app if it is become online by using the link from the previous step:
 
-![check webapp](screenshot/7.jpg "check webapp")
+![check webapp](screenshot/8.jpg "check webapp")
 
 Test the online app by invoke 'make_predict_azure_app.sh'  modify webapp name in the file
 Edit file 'make_predict_azure_app.sh' and replace '< yourappname >' with your webapp name (e.g. flask-abdulrazak).
@@ -90,7 +92,7 @@ Test the remote webapp:
 ```bash
 (.myrepo) odl_user [~/flask-project]$  ./make_predict_azure_app.sh
 ```
-![Test remotely](screenshot/8.jpg "Test remotely")
+![Test remotely](screenshot/9.jpg "Test remotely")
 
 Logs of webapp can be easily done by tail linux command:
 
