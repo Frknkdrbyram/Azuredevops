@@ -92,7 +92,6 @@ Test the remote webapp:
 ```bash
 (.myrepo) odl_user [~/flask-project]$  ./make_predict_azure_app.sh
 ```
-![Test remotely](screenshot/9.jpg "Test remotely")
 
 Logs of webapp can be easily done by tail linux command:
 
@@ -110,7 +109,7 @@ Install locust tool
 
 (.myrepo) odl_user [~/flask-project]$ pip install locust
 
-![Install locust tool](screenshot/locust_install.jpeg "Install locust tool")
+![Install locust tool](screenshot/10.jpg "Install locust tool")
 
 Open Template file 'locustinput.py' and Replace '< yourappname >':
 ```bash
@@ -118,7 +117,7 @@ Open Template file 'locustinput.py' and Replace '< yourappname >':
 (.myrepo) odl_user [~/flask-project]$ locust -f locustinput.py --headless -u 10 -r 3 -t 10s
 ```
 
-![locust_test](screenshot/locust_log.jpeg "locust_test")
+![locust_test](screenshot/11.jpg "locust_test")
 
 ### Provisioning CI/CD using Azure Pipelines
 
@@ -136,11 +135,11 @@ Configure pipeline to deploy code to Azure app service 'that created in previous
 
 run the pipeline including the 'Build stage' and the 'Deploy Web App' based on yaml file:
 
-![Azure_pipeline_build_deploy](screenshot/Azure_pipeline_build_deploy.jpeg "Azure_pipeline_build_deploy")
+![Azure_pipeline_build_deploy](screenshot/12.jpg "Azure_pipeline_build_deploy")
 
 View pipeline log by click on build icon
 
-![Azure_pipeline_build_deploy_log](screenshot/Azure_pipeline_build_deploy_log.jpeg "Azure_pipeline_build_deploy_log")
+![Azure_pipeline_build_deploy_log](screenshot/13.jpg "Azure_pipeline_build_deploy_log")
 
 From now on every change to your code will trigger the CI/CD pipeline and update your webapp accordingly:
 
