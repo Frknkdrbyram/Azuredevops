@@ -44,20 +44,20 @@ furkan [~/Azuredevops]$ source ~/.myrepo/bin/activate
 
 Install needed packages and testing it:
 ```bash
-(.myrepo) furkan [~/flask-project]$ make all
+(.myrepo) furkan [~/Azuredevops]$ make all
 ```
 ![Build project](screenshot/4.jpg "Build project")
 
 Run the application locally:
 ```bash
-(.myrepo) furkan [~/flask-project]$ flask run
+(.myrepo) furkan [~/Azuredevops]$ flask run
 ```
 
 Test the code locally in new Azure Bash:
 ```bash
 furkan [~]$ source ~/.myrepo/bin/activate
-(.myrepo) furkan [~]$ cd flask-project/
-(.myrepo) furkan [~/flask-project]$ ./make_prediction.sh
+(.myrepo) furkan [~]$ cd Azuredevops/
+(.myrepo) furkan [~/Azuredevops]$ ./make_prediction.sh
 ```
 
 ![Test locally](screenshot/5.jpg "Test locally")
@@ -78,7 +78,7 @@ Passing GitHub Actions:
 ### Deploying to Azure App Services
 Deploy app to Azure app services locally using Azure CLI:
 ```bash
-(.myrepo) odl_user [~/flask-project]$ az webapp up -n flask-abdulrazak --sku F1 --resource-group Azuredevops
+(.myrepo) furkan [~/Azuredevops]$ az webapp up -n flask-Frknkdrbyram --sku F1 --resource-group Azuredevops
 ```
 
 Check app if it is become online by using the link from the previous step:
@@ -90,7 +90,7 @@ Edit file 'make_predict_azure_app.sh' and replace '< yourappname >' with your we
 
 Test the remote webapp:
 ```bash
-(.myrepo) odl_user [~/flask-project]$  ./make_predict_azure_app.sh
+(.myrepo) furkan [~/Azuredevops]$  ./make_predict_azure_app.sh
 ```
 
 Logs of webapp can be easily done by tail linux command:
@@ -98,7 +98,7 @@ Logs of webapp can be easily done by tail linux command:
 open cloud shell 
 
 ```bash
-(.myrepo) odl_user [~/flask-project]$ az webapp log tail
+(.myrepo) furkan [~/Azuredevops]$ az webapp log tail
 ```
 
 ![Log](screenshot/9.jpg "Log")
@@ -107,14 +107,14 @@ validation of the webapp can be performed using [locust](https://locust.io).
 
 Install locust tool 
 
-(.myrepo) odl_user [~/flask-project]$ pip install locust
+(.myrepo) furkan [~/Azuredevops]$ pip install locust
 
 ![Install locust tool](screenshot/10.jpg "Install locust tool")
 
 Open Template file 'locustinput.py' and Replace '< yourappname >':
 ```bash
-(.myrepo) odl_user [~/flask-project]$ nano locustinput.py
-(.myrepo) odl_user [~/flask-project]$ locust -f locustinput.py --headless -u 10 -r 3 -t 10s
+(.myrepo) furkan [~/Azuredevops]$ nano locustinput.py
+(.myrepo) furkan [~/Azuredevops]$ locust -f locustinput.py --headless -u 10 -r 3 -t 10s
 ```
 
 ![locust_test](screenshot/11.jpg "locust_test")
@@ -143,22 +143,6 @@ View pipeline log by click on build icon
 
 From now on every change to your code will trigger the CI/CD pipeline and update your webapp accordingly:
 
-Change the application name in app.py from 'Sklearn Prediction Home' to 'Sklearn Prediction Home via Azure CI/CD Pipeline' and commit it:
-```bash
-(.myrepo) odl_user [~/flask-project]$ nano app.py
-(.myrepo) odl_user [~/flask-project]$ git add app.py && git commit -m "Change app name" && git push
-```
-![change_appname_and_push](screenshot/change_appname_and_push.jpeg "change_appname_and_push")
-App name before changing:
-![appname_before_change](screenshot/appname_before_change.jpeg "appname_before_change")
-App name after changing:
-![appname_changed](screenshot/appname_changed.jpeg "appname_changed")
-
-The pipeline is triggered by each commit to GitHub Repo and actually that is the CI/CD
-![pipeline_triggered1](screenshot/pipeline_triggered1.jpeg "pipeline_triggered1")
-![pipeline_triggered2](screenshot/pipeline_triggered2.jpeg "pipeline_triggered2")
-![pipeline_triggered3](screenshot/pipeline_triggered3.jpeg "pipeline_triggered3")
-![pipeline_triggered4](screenshot/pipeline_triggered4.jpeg "pipeline_triggered4")
 
 
 ## Enhancements
