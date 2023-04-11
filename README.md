@@ -39,7 +39,7 @@ Create python virtual env & source :
 odl_user [~/flask-project]$ python3 -m venv ~/.myrepo
 odl_user [~/flask-project]$ source ~/.myrepo/bin/activate
 ```
-![ GitHub Clone Repo](screenshot/2.jpg "Clone repo / GitHub Clone Repo")
+![ GitHub Clone Repo](screenshot/2.png "Clone repo / GitHub Clone Repo")
 
 Install needed packages and testing it:
 ```bash
