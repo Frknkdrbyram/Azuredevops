@@ -141,7 +141,11 @@ View pipeline log by click on build icon
 
 From now on every change to your code will trigger the CI/CD pipeline and update your webapp accordingly
 
+App name before changing:
+![Azure_pipeline_build_deploy_log](screenshot/8.jpg "Azure_pipeline_build_deploy_log")
 
+App name after changing:
+![Azure_pipeline_build_deploy_log](screenshot/9.jpg "Azure_pipeline_build_deploy_log")
 
 ## Enhancements
 Future improvements include but are not limited to:
