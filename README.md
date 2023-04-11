@@ -39,13 +39,13 @@ Create python virtual env & source :
 odl_user [~/flask-project]$ python3 -m venv ~/.myrepo
 odl_user [~/flask-project]$ source ~/.myrepo/bin/activate
 ```
-![ GitHub Clone Repo](screenshot/github_clone.jpeg "Clone repo / GitHub Clone Repo")
+![ GitHub Clone Repo](screenshot/2.jpg "Clone repo / GitHub Clone Repo")
 
 Install needed packages and testing it:
 ```bash
 (.myrepo) odl_user [~/flask-project]$ make all
 ```
-![Build project](screenshot/make_all.jpeg "Build project")
+![Build project](screenshot/screenshot/3.jpg "Build project")
 
 Run the application locally:
 ```bash
@@ -59,7 +59,7 @@ odl_user [~]$ source ~/.myrepo/bin/activate
 (.myrepo) odl_user [~/flask-project]$ ./make_prediction.sh
 ```
 
-![Test locally](screenshot/prediction.jpeg "Test locally")
+![Test locally](screenshot/4.jpg "Test locally")
 
 ### Provisioning CI using Github Actions
 Performe CI by using GitHub Action.
@@ -67,10 +67,10 @@ Performe CI by using GitHub Action.
 From the top bar of GitHub click on 'Actions', then click on "set up a workflow yourself' and use the GitHub Actions template yaml file located in  [.github/workflows/main.yml]
 
 Once you create this workflow, it will run automatically to build code in Repo:
-![GitHub Actions](screenshot/run_action.jpeg "GitHub Actions")
+![GitHub Actions](screenshot/5.jpg "GitHub Actions")
 
 Passing GitHub Actions:
-![GitHub Actions](screenshot/passed_actions.jpeg "GitHub Actions")
+![GitHub Actions](screenshot/6.jpg "GitHub Actions")
 
 ### Deploying to Azure App Services
 Deploy app to Azure app services locally using Azure CLI:
@@ -80,7 +80,7 @@ Deploy app to Azure app services locally using Azure CLI:
 
 Check app if it is become online by using the link from the previous step:
 
-![check webapp](screenshot/Azure_running_webapp.jpeg "check webapp")
+![check webapp](screenshot/7.jpg "check webapp")
 
 Test the online app by invoke 'make_predict_azure_app.sh'  modify webapp name in the file
 Edit file 'make_predict_azure_app.sh' and replace '< yourappname >' with your webapp name (e.g. flask-abdulrazak).
@@ -89,7 +89,7 @@ Test the remote webapp:
 ```bash
 (.myrepo) odl_user [~/flask-project]$  ./make_predict_azure_app.sh
 ```
-![Test remotely](screenshot/remote_prediction.jpeg "Test remotely")
+![Test remotely](screenshot/8.jpg "Test remotely")
 
 Logs of webapp can be easily done by tail linux command:
 
@@ -99,7 +99,7 @@ open cloud shell
 (.myrepo) odl_user [~/flask-project]$ az webapp log tail
 ```
 
-![Log](screenshot/log.jpeg "Log")
+![Log](screenshot/9.jpg "Log")
 
 validation of the webapp can be performed using [locust](https://locust.io).
 
