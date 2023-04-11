@@ -83,6 +83,8 @@ Deploy app to Azure app services locally using Azure CLI:
 
 Check app if it is become online by using the link from the previous step:
 
+![check webapp](screenshot/webapp.jpg "check webapp")
+
 ![check webapp](screenshot/8.jpg "check webapp")
 
 Test the online app by invoke 'make_predict_azure_app.sh'  modify webapp name in the file
@@ -98,7 +100,7 @@ open cloud shell
 (.myrepo) furkan [~/Azuredevops]$ az webapp log tail
 ```
 
-![Log](screenshot/10.jpg "Log")
+![Log](screenshot/tail.jpg "Log")
 
 validation of the webapp can be performed using [locust](https://locust.io).
 
@@ -136,14 +138,15 @@ View pipeline log by click on build icon
 
 ![Azure_pipeline_build_deploy_log](screenshot/13.jpg "Azure_pipeline_build_deploy_log")
 
-From now on every change to your code will trigger the CI/CD pipeline and update your webapp accordingly:
+From now on every change to your code will trigger the CI/CD pipeline and update your webapp accordingly
 
 
 
 ## Enhancements
 Future improvements include but are not limited to:
-* preform automatically testing using testing module such as locust.
+* More test cases using pytest
 
+* Preform automatically testing using testing module such as locust as script at the last step in deployment stage
 
 ## Demo
 
