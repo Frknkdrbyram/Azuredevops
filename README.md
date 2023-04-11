@@ -16,7 +16,7 @@ This project describe the DevOps CI/CD concepts. using Azure pipeline and Github
 ## Instructions
 The below diagram shows the project architecture.  
 
-![project architecture](screenshot/Architecture_of_CI_CD_Project.png "project architecture")
+![project architecture](screenshot/1.jpg "project architecture")
 
 The source code are in GitHub repo, actually GitHub Actions perform CI. therefore once any change happend on repo the GitHub Actions can atomatically check the code by build and test.
 
@@ -30,92 +30,89 @@ open the Azure cloud shell by using your credential.
 
 Clone project from GitHub and change to the project directory:
 ```bash
-odl_user [~]$ git clone git@github.com:Abdulrazak-Alahmad/flask-project.git
-odl_user [~]$ cd flask-project
+furkan [~]$ git clone git@github.com:Frknkdrbyram/Azuredevops.git
+furkan [~]$ cd Azuredevops
 ```
 
 Create python virtual env & source :
 ```bash
-odl_user [~/flask-project]$ python3 -m venv ~/.myrepo
-odl_user [~/flask-project]$ source ~/.myrepo/bin/activate
+furkan [~/Azuredevops]$ python3 -m venv ~/.myrepo
+furkan [~/Azuredevops]$ source ~/.myrepo/bin/activate
 ```
-![ GitHub Clone Repo](screenshot/github_clone.jpeg "Clone repo / GitHub Clone Repo")
+![ GitHub Clone Repo](screenshot/2.png "Clone repo / GitHub Clone Repo")
+![ GitHub Clone Repo](screenshot/3.jpg "Clone repo / GitHub Clone Repo")
 
 Install needed packages and testing it:
 ```bash
-(.myrepo) odl_user [~/flask-project]$ make all
+(.myrepo) furkan [~/Azuredevops]$ make all
 ```
-![Build project](screenshot/make_all.jpeg "Build project")
+![Build project](screenshot/4.jpg "Build project")
 
 Run the application locally:
 ```bash
-(.myrepo) odl_user [~/flask-project]$ flask run
+(.myrepo) furkan [~/Azuredevops]$ flask run
 ```
 
 Test the code locally in new Azure Bash:
 ```bash
-odl_user [~]$ source ~/.myrepo/bin/activate
-(.myrepo) odl_user [~]$ cd flask-project/
-(.myrepo) odl_user [~/flask-project]$ ./make_prediction.sh
+furkan [~]$ source ~/.myrepo/bin/activate
+(.myrepo) furkan [~]$ cd Azuredevops/
+(.myrepo) furkan [~/Azuredevops]$ ./make_prediction.sh
 ```
 
-![Test locally](screenshot/prediction.jpeg "Test locally")
+![Test locally](screenshot/5.jpg "Test locally")
 
 ### Provisioning CI using Github Actions
 Performe CI by using GitHub Action.
 
-From the top bar of GitHub click on 'Actions', then click on "set up a workflow yourself' and use the GitHub Actions template yaml file located in  [.github/workflows/main.yml]
+From the top bar of GitHub click on 'Actions', then click on "set up a workflow yourself' and use the GitHub Actions template yaml file located in  [.github/workflows/pythonapp1.yml]
 
 Once you create this workflow, it will run automatically to build code in Repo:
-![GitHub Actions](screenshot/run_action.jpeg "GitHub Actions")
+![GitHub Actions](screenshot/6.jpg "GitHub Actions")
+
+
 
 Passing GitHub Actions:
-![GitHub Actions](screenshot/passed_actions.jpeg "GitHub Actions")
+![GitHub Actions](screenshot/7.jpg "GitHub Actions")
 
 ### Deploying to Azure App Services
 Deploy app to Azure app services locally using Azure CLI:
 ```bash
-(.myrepo) odl_user [~/flask-project]$ az webapp up -n flask-abdulrazak --sku F1 --resource-group Azuredevops
+(.myrepo) furkan [~/Azuredevops]$ az webapp up -n flask-Frknkdrbyram --sku F1 --resource-group Azuredevops
 ```
 
 Check app if it is become online by using the link from the previous step:
 
-![check webapp](screenshot/Azure_running_webapp.jpeg "check webapp")
+![check webapp](screenshot/8.jpg "check webapp")
 
 Test the online app by invoke 'make_predict_azure_app.sh'  modify webapp name in the file
-Edit file 'make_predict_azure_app.sh' and replace '< yourappname >' with your webapp name (e.g. flask-abdulrazak).
+Edit file 'make_predict_azure_app.sh' and replace '< yourappname >' with your webapp name (e.g. flask-Frknkdrbyram).
 
 Test the remote webapp:
-```bash
-(.myrepo) odl_user [~/flask-project]$  ./make_predict_azure_app.sh
-```
-![Test remotely](screenshot/remote_prediction.jpeg "Test remotely")
 
 Logs of webapp can be easily done by tail linux command:
 
 open cloud shell 
 
 ```bash
-(.myrepo) odl_user [~/flask-project]$ az webapp log tail
+(.myrepo) furkan [~/Azuredevops]$ az webapp log tail
 ```
 
-![Log](screenshot/log.jpeg "Log")
+![Log](screenshot/10.jpg "Log")
 
 validation of the webapp can be performed using [locust](https://locust.io).
 
 Install locust tool 
 
-(.myrepo) odl_user [~/flask-project]$ pip install locust
-
-![Install locust tool](screenshot/locust_install.jpeg "Install locust tool")
-
+(.myrepo) furkan [~/Azuredevops]$ pip install locust
 Open Template file 'locustinput.py' and Replace '< yourappname >':
 ```bash
-(.myrepo) odl_user [~/flask-project]$ nano locustinput.py
-(.myrepo) odl_user [~/flask-project]$ locust -f locustinput.py --headless -u 10 -r 3 -t 10s
+(.myrepo) furkan [~/Azuredevops]$ nano locustinput.py
+(.myrepo) furkan [~/Azuredevops]$ locust -f locustinput.py --headless -u 10 -r 3 -t 10s
 ```
+![Install locust tool](screenshot/11.jpg "Install locust tool")
 
-![locust_test](screenshot/locust_log.jpeg "locust_test")
+
 
 ### Provisioning CI/CD using Azure Pipelines
 
@@ -133,30 +130,14 @@ Configure pipeline to deploy code to Azure app service 'that created in previous
 
 run the pipeline including the 'Build stage' and the 'Deploy Web App' based on yaml file:
 
-![Azure_pipeline_build_deploy](screenshot/Azure_pipeline_build_deploy.jpeg "Azure_pipeline_build_deploy")
+![Azure_pipeline_build_deploy](screenshot/12.jpg "Azure_pipeline_build_deploy")
 
 View pipeline log by click on build icon
 
-![Azure_pipeline_build_deploy_log](screenshot/Azure_pipeline_build_deploy_log.jpeg "Azure_pipeline_build_deploy_log")
+![Azure_pipeline_build_deploy_log](screenshot/13.jpg "Azure_pipeline_build_deploy_log")
 
 From now on every change to your code will trigger the CI/CD pipeline and update your webapp accordingly:
 
-Change the application name in app.py from 'Sklearn Prediction Home' to 'Sklearn Prediction Home via Azure CI/CD Pipeline' and commit it:
-```bash
-(.myrepo) odl_user [~/flask-project]$ nano app.py
-(.myrepo) odl_user [~/flask-project]$ git add app.py && git commit -m "Change app name" && git push
-```
-![change_appname_and_push](screenshot/change_appname_and_push.jpeg "change_appname_and_push")
-App name before changing:
-![appname_before_change](screenshot/appname_before_change.jpeg "appname_before_change")
-App name after changing:
-![appname_changed](screenshot/appname_changed.jpeg "appname_changed")
-
-The pipeline is triggered by each commit to GitHub Repo and actually that is the CI/CD
-![pipeline_triggered1](screenshot/pipeline_triggered1.jpeg "pipeline_triggered1")
-![pipeline_triggered2](screenshot/pipeline_triggered2.jpeg "pipeline_triggered2")
-![pipeline_triggered3](screenshot/pipeline_triggered3.jpeg "pipeline_triggered3")
-![pipeline_triggered4](screenshot/pipeline_triggered4.jpeg "pipeline_triggered4")
 
 
 ## Enhancements
