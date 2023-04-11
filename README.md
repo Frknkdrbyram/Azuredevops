@@ -68,10 +68,10 @@ Performe CI by using GitHub Action.
 From the top bar of GitHub click on 'Actions', then click on "set up a workflow yourself' and use the GitHub Actions template yaml file located in  [.github/workflows/main.yml]
 
 Once you create this workflow, it will run automatically to build code in Repo:
-![GitHub Actions](screenshot/5.jpg "GitHub Actions")
+![GitHub Actions](screenshot/6.jpg "GitHub Actions")
 
 Passing GitHub Actions:
-![GitHub Actions](screenshot/6.jpg "GitHub Actions")
+![GitHub Actions](screenshot/7.jpg "GitHub Actions")
 
 ### Deploying to Azure App Services
 Deploy app to Azure app services locally using Azure CLI:
