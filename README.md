@@ -153,9 +153,9 @@ App name after changing:
 
 The pipeline is triggered by each commit to GitHub Repo and actually that is the CI/CD
 
-![Azure_pipeline_build_deploy_log](screenshot/buildlast.jpg "Azure_pipeline_build_deploy_log")
+![Azure_pipeline_build_deploy_log](screenshot/buildlast.png "Azure_pipeline_build_deploy_log")
 
-![Azure_pipeline_build_deploy_log](screenshot/deploylast.jpg "Azure_pipeline_build_deploy_log")
+![Azure_pipeline_build_deploy_log](screenshot/deploylast.png "Azure_pipeline_build_deploy_log")
 ## Enhancements
 Future improvements include but are not limited to:
 * More test cases using pytest
