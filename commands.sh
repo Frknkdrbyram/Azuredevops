@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-az webapp up -n flask-abdulrazak --sku F1 --resource-group Azuredevops
+az webapp up -n flask-Frknkdrbyram --sku F1 --resource-group Azuredevops
