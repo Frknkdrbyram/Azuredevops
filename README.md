@@ -57,7 +57,7 @@ Test the code locally in new Azure Bash:
 ```bash
 furkan [~]$ source ~/.myrepo/bin/activate
 (.myrepo) furkan [~]$ cd Azuredevops/
-(.myrepo) furkan [~/Azuredevops]$ ./make_predict_azure_app.sh
+(.myrepo) furkan [~/Azuredevops]$ ./make_prediction.sh
 ```
 
 ![Test locally](screenshot/5.jpg "Test locally")
@@ -83,8 +83,6 @@ Deploy app to Azure app services locally using Azure CLI:
 
 Check app if it is become online by using the link from the previous step:
 
-![check webapp](screenshot/webapp.jpg "check webapp")
-
 ![check webapp](screenshot/8.jpg "check webapp")
 
 Test the online app by invoke 'make_predict_azure_app.sh'  modify webapp name in the file
@@ -100,7 +98,7 @@ open cloud shell
 (.myrepo) furkan [~/Azuredevops]$ az webapp log tail
 ```
 
-![Log](screenshot/tail.jpg "Log")
+![Log](screenshot/10.jpg "Log")
 
 validation of the webapp can be performed using [locust](https://locust.io).
 
@@ -113,7 +111,6 @@ Open Template file 'locustinput.py' and Replace '< yourappname >':
 (.myrepo) furkan [~/Azuredevops]$ locust -f locustinput.py --headless -u 10 -r 3 -t 10s
 ```
 ![Install locust tool](screenshot/11.jpg "Install locust tool")
-![Install locust tool](screenshot/lotus.jpg "Install locust tool")
 
 
 
@@ -141,29 +138,21 @@ View pipeline log by click on build icon
 
 From now on every change to your code will trigger the CI/CD pipeline and update your webapp accordingly:
 
-Change the application name in app.py from 'Sklearn Prediction Home' to 'Sklearn Prediction Home Edited' and commit it:
+Change the application name in app.py from 'Sklearn Prediction Home' to 'Sklearn Prediction Home via Azure CI/CD Pipeline' and commit it:
 
-(.myrepo) furkan [~/Azuredevops]$ git add app.py && git commit -m "Change app name" && git push
+(.myrepo) furkan [~/Azuredevops]$ nano app.py
+(.myrepo) furkan [~/Azuredevops]$ git add app.py && 
 
-App name before changing:
-![Azure_pipeline_build_deploy_log](screenshot/8.jpg "Azure_pipeline_build_deploy_log")
+git commit -m "Change app name" && git push
 
-App name after changing:
-![Azure_pipeline_build_deploy_log](screenshot/9.jpg "Azure_pipeline_build_deploy_log")
-
-The pipeline is triggered by each commit to GitHub Repo and actually that is the CI/CD
-
-![Azure_pipeline_build_deploy_log](screenshot/buildlast.png "Azure_pipeline_build_deploy_log")
-
-![Azure_pipeline_build_deploy_log](screenshot/deploylast.png "Azure_pipeline_build_deploy_log")
 ## Enhancements
 Future improvements include but are not limited to:
-* More test cases using pytest
 
-* Preform automatically testing using testing module such as locust as script at the last step in deployment stage
+More test cases using pytest
+preform automatically testing using testing module such as locust as script at the last step in deployment stage
 
 ## Demo
 
 This video demonstrates all previous steps:
-[Demo Video](https://www.youtube.com/watch?v=Y8xmJ6gYyfo) 
+[Demo Video](https://www.youtube.com/watch?v=7WVkz0Brn0E)
 
