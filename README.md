@@ -57,7 +57,7 @@ Test the code locally in new Azure Bash:
 ```bash
 furkan [~]$ source ~/.myrepo/bin/activate
 (.myrepo) furkan [~]$ cd Azuredevops/
-(.myrepo) furkan [~/Azuredevops]$ ./make_prediction.sh
+(.myrepo) furkan [~/Azuredevops]$ ./make_predict_azure_app.sh
 ```
 
 ![Test locally](screenshot/5.jpg "Test locally")
