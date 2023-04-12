@@ -164,6 +164,6 @@ Future improvements include but are not limited to:
 
 ## Demo
 
-This video demonstrates all previous steps:
+This video demonstrates all previous steps :
 [Demo Video](https://www.youtube.com/watch?v=Y8xmJ6gYyfo) 
 
